@@ -1,133 +1,246 @@
 <% layout('/layouts/boilerplate') -%>
 
 <style>
-  #filters{
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
+  .font-size{
+      font-size: 0.8rem;
   }
 
-  .filter{
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
+  .on-mouse-over{
+      opacity: 0.7;
   }
-
-
-  .filter:hover{
-    opacity:1;
-    cursor: pointer;
-  }
-
-
-  .filter p{
-    font-size: 0.8rem;
+  .on-mouse-over:hover{
+      cursor: pointer;
+      opacity: 1;
   }
 
   .tax-info{
     display: none;
   }
-
-  .tax-toggle{
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    height: 3.25rem;
-    font-size: 0.8rem;
-    padding: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    align-items: center;
-  }
 </style>
 
 <body>
     <!-- <h2>All Listings</h2> -->
+    <div class="container">
 
-    <div id="filters">
-      <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-      </div>
-
-
-      <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic cities</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountains</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-tractor"></i></div>
-        <p>Farms</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-regular fa-snowflake"></i></div>
-        <p>Arctic</p>
-      </div>
-
-
-      <div class="filter">
-        <div><i class="fa-solid fa-igloo"></i></div>
-        <p>Domes</p>
-      </div>
-
-      <div class="tax-toggle">
-        <div class="form-check-reverse form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+      <div class="d-none d-lg-block pt-4">
+        <div class="row text-center">
+            <div class="col col-auto on-mouse-over">
+                <i class="fa-solid fa-fire"></i>
+                <div class="font-size">
+                    Trending
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-bed"></i>
+                <div class="font-size">
+                    Rooms
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-mountain-city"></i>
+                <div class="font-size">
+                    Iconic Cities
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-mountain"></i>
+                <div class="font-size">
+                    Mountains
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <div class="font-size">
+                    Castles
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-person-swimming"></i>
+                <div class="font-size">
+                  Amazing Pools
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-campground"></i>
+                <div class="font-size">
+                  Camping
+                </div>
+            </div>
+  
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-tractor"></i>
+                <div class="font-size">
+                  Farms
+                </div>
+            </div>
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-regular fa-snowflake"></i>
+                <div class="font-size">
+                  Arctic
+                </div>
+            </div>
+  
+  
+            <div class="col col-auto on-mouse-over text-center">
+                <i class="fa-solid fa-igloo"></i>
+                <div class="font-size">
+                  Domes
+                </div>
+            </div>
+  
+            <div class="col text-center pe-0">
+                <div class="ms-auto border border-dark rounded p-3 w-75">
+                <div class="form-check-reverse form-switch text-center">
+                    
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  
+                        <label class="form-check-label font-size" for="flexSwitchCheckDefault ">Display Total After Taxes</label>
+                    </div>
+                  </div>
+            </div>
+  
+  
         </div>
-      </div>
-
+    </div>
+  
+    <button class="d-lg-none btn btn-outline-dark mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+        Categories
+    </button>
+  
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-scroll="true">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Categories</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="offcanvas-body">
+            
+                <div class="row row-cols-2 text-center">
+                    <div class="col on-mouse-over mt-2">
+                        <i class="fa-solid fa-fire"></i>
+                        <div class="font-size">
+                            Trending
+                        </div>
+                    </div>
+  
+  
+                    <div class="col on-mouse-over mt-2">
+                        <i class="fa-solid fa-bed"></i>
+                        <div class="font-size">
+                            Rooms
+                        </div>
+                    </div>
+                    
+  
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-mountain-city"></i>
+                        <div class="font-size">
+                            Iconic Cities
+                        </div>
+                    </div>
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-mountain"></i>
+                        <div class="font-size">
+                            Mountains
+                        </div>
+                    </div>
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-brands fa-fort-awesome"></i>
+                        <div class="font-size">
+                            Castles
+                        </div>
+                    </div>
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-person-swimming"></i>
+                        <div class="font-size">
+                          Amazing Pools
+                        </div>
+                    </div>
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-campground"></i>
+                        <div class="font-size">
+                          Camping
+                        </div>
+                    </div>
+        
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-tractor"></i>
+                        <div class="font-size">
+                          Farms
+                        </div>
+                    </div>
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-regular fa-snowflake"></i>
+                        <div class="font-size">
+                          Arctic
+                        </div>
+                    </div>
+        
+        
+                    <div class="col on-mouse-over mt-3">
+                        <i class="fa-solid fa-igloo"></i>
+                        <div class="font-size">
+                          Domes
+                        </div>
+                    </div>
+                    
+                </div>
+  
+  
+                <div class="row mt-5 p-3">
+                    <div class="col d-flex justify-content-center">
+                        <div class="border border-dark rounded p-3 w-75">
+                            <div class="form-check-reverse form-switch text-center">
+                                
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckOffcanvas">
+            
+                                    <label class="form-check-label font-size" for="flexSwitchCheckOffcanvas">Display Total After Taxes</label>
+                                </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
 
     </div>
+    
+ 
+    <!-- <h2>All Listings</h2> -->
 
-
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-5">
             <% for(let listings of allListings){ %>
                 <a href="/listings/<%= listings._id %>" class="listing-link">
                 <div class="card col listing-card">
                     <img src="<%= listings.image.url %>" class="card-img-top" alt="..." style="height: 20rem;">
                     <div class="card-img-overlay"></div>
                     <div class="card-body">
-                      <p class="card-text"><b><%= listings.title %></b> <br> ₹ <%= listings.price.toLocaleString("en-IN") %> / night &nbsp;&nbsp;
-                      <i class="tax-info">+ 18% GST</i>
-                    </p>
+                      <p class="card-text"><b><%= listings.title %></b> <br> ₹ <%= listings.price.toLocaleString("en-IN") %> / night&nbsp;&nbsp;
+                        <i class="tax-info">+ 18% GST</i>
+                      </p>
                     </div>
                   </div>
                   </a>
                   <% } %>
     </div>
     
-
     <script>
-      let taxSwitch=document.getElementById("flexSwitchCheckDefault");
-      taxSwitch.addEventListener("click", ()=>{
+      let taxSwitchMain=document.getElementById("flexSwitchCheckDefault");
+      taxSwitchMain.addEventListener("click", ()=>{
         let taxInfo=document.getElementsByClassName("tax-info");
         for(info of taxInfo)
         {
@@ -141,6 +254,15 @@
           }
         }
       });
-    </script>
 
+
+      let taxSwitchOffcanvas=document.getElementById("flexSwitchCheckOffcanvas");
+      taxSwitchOffcanvas.addEventListener("click",()=>{
+        let taxInfo=document.getElementsByClassName("tax-info");
+        for(info of taxInfo)
+        {
+          info.style.display= info.style.display !== "inline"? "inline" : "none";
+        }
+      });
+    </script>
 </body>
